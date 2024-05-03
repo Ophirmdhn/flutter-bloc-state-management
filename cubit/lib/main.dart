@@ -34,6 +34,18 @@ class CounterCubit extends Cubit<int> {
   void kurangiData() {
     emit(state - 1);
   }
+
+  @override
+  void onError(Object error, StackTrace stackTrace) {
+    super.onError(error, stackTrace);
+    print(error);
+  }
+
+  @override
+  void onChange(Change<int> change) {
+    super.onChange(change);
+    print(change);
+  }
 }
 
 class HomePage extends StatelessWidget {
